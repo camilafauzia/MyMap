@@ -9,12 +9,15 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-toolbar size="large">Camila's Map</ion-toolbar>ion-title>
+      <ion-title size="large">Camila's Map</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-select [(ngModel)]="selectedBasemap" (ionChange)="changeBasemap()">
+    <ion-select-option value="topo-vector">Topographic</ion-select-option>
+    <ion-select-option value="streets">Streets</ion-select-option>
+    <ion-select-option value="dark-gray">Dark Gray</ion-select-option>
+  </ion-select>
+
+  <div id="container" style="height: 100%; width: 100%;"></div>
 </ion-content>
